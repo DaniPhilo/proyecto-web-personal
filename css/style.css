@@ -1,0 +1,148 @@
+:root {
+    --primary-color: #3E3C44;
+    --secondary-color: #358fe3; /* 158FFF*/
+    --accent-color: #FF9900;
+    --text-color: #FFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+
+/* Configuración MÓVIL */
+
+@media (max-width:481px) {
+    body {
+        background-image: url('../assets/img/teclado.jpg');
+        background-size: 150% 100%;
+        background-repeat: no-repeat;
+        /*background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 45%, rgba(0, 200, 1, .5));*/
+        color: var(--text-color);
+        position: relative;
+        height: 100vh;
+    }
+    /* NAVBAR */
+    header {
+        background-color: var(--secondary-color);
+        width: 100%;
+        height: 4rem;
+        z-index: 10;
+
+        text-align: center;
+    }
+    /* El nav está desplazado hacia arriba siempre, fuera de la pantalla */
+    nav {
+        background-color: var(--secondary-color);
+        padding-top: 4rem;
+        z-index: 9;
+        width: 100%;
+        height: fit-content;
+
+        transform: translateY(-100%);
+        transition: .5s ease-in-out;
+    }
+
+    nav > ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--secondary-color);
+    }
+    nav > ul > li {
+        border-bottom: 2px solid var(--accent-color);
+        
+        width: 40%;
+        padding: 1rem .5rem;
+        text-align: center;
+    }
+    nav > ul > li:last-child {
+        border-bottom: none;
+    }
+    nav > ul > li > a {
+        color: var(--text-color);
+        padding: 1rem 2rem;
+    }
+
+
+    /*Configuración del botón que despliega el nav*/
+    #hamburger-span {
+        background-color: var(--text-color);
+        width: 30px;
+        height: 3px;
+        
+        position: absolute;
+        top: 2rem;
+        left: 47%;
+        z-index: 11;
+
+        cursor: pointer;
+    }
+    #hamburger-span::before {
+        background-color: var(--text-color);
+        content: '';
+        width: 30px;
+        height: 3px;
+
+        position: absolute;
+        top: .5rem;
+        left: 0;
+    }
+    #hamburger-span::after {
+        background-color: var(--text-color);
+        content: '';
+        width: 30px;
+        height: 3px;
+
+        position: absolute;
+        top: -.5rem;
+        left: 0;
+    }
+    #check {
+        display: none;
+    }
+    #check:checked ~ nav {
+        transform: translateY(0);
+    }
+
+
+    /*Diseño del main*/
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 80%;
+        
+    }
+    main > div {
+        text-align: center;
+        border-radius: 20px;
+        width: 100%;
+        padding: 1rem;
+        
+    }
+    #lastname {
+        color: var(--accent-color);
+    }
+    hr {
+        background-color: var(--secondary-color);
+        width: 100%;
+        height: 1px;
+        border: none;
+    }
+
+    
+
+
+    .fa {
+        color: var(--accent-color);
+        font-size: 5rem;
+    }
+}
