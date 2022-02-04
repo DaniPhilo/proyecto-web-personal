@@ -4,7 +4,6 @@
     --accent-color: #ff8800; /*FF9900*/
     --text-color: #FFF;
 }
-
 * {
     margin: 0;
     padding: 0;
@@ -14,77 +13,81 @@
 }
 
 
+
 /* Configuración MÓVIL */
+body {
+    color: var(--text-color);
+    background-image: url('../assets/img/teclado.jpg');
+    background-size: 150% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
 
-@media (max-width:481px) {
-    body {
-        background-image: url('../assets/img/teclado.jpg');
-        background-size: 150% 100%;
-        background-repeat: no-repeat;
-        /*background: linear-gradient(0deg, rgba(255, 255, 255, 0), rgba(0, 0, 0, 1) 45%, rgba(0, 200, 1, .5));*/
-        color: var(--text-color);
-        position: relative;
-        height: 100vh;
-    }
-    /* NAVBAR */
-    header {
-        background-color: var(--secondary-color);
-        width: 100%;
-        height: 4rem;
-        z-index: 10;
 
-        text-align: center;
-    }
-    /* El nav está desplazado hacia arriba siempre, fuera de la pantalla */
-    nav {
-        background-color: var(--secondary-color);
-        padding-top: 4rem;
-        z-index: 9;
-        width: 100%;
-        height: fit-content;
 
-        transform: translateY(-100%);
-        transition: .5s ease-in-out;
-    }
 
-    nav > ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+/* Diseño del nav */
+header {
+    position: relative;
+}
+/* El nav está desplazado hacia arriba siempre, fuera dela pantalla */
+nav {
+    background-color: var(--secondary-color);
 
-        background-color: var(--secondary-color);
-    }
-    nav > ul > li {
-        border-bottom: 2px solid var(--accent-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    width: 50%;
+    height: 100vh;
+
+    transform: translateX(100%);
+    transition: .5s ease-in-out;
+}
+nav > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 8rem;
+
+    background-color: var(--secondary-color);
+}
+nav > ul > li {
+    border-bottom: 2px solid var(--accent-color);
+    text-align: center;
+    width: 50%;
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+nav > ul > li:last-child {
+    border-bottom: none;
+}
+nav > ul > li > a {
+    color: var(--text-color);
+    padding: 1rem .5rem;
+}
+
+
+
+
+/*Configuración del botón que despliega el nav*/
+#hamburger-span {
+    background-color: var(--text-color);
+    width: 30px;
+    height: 3px;
         
-        width: 40%;
-        padding: 1rem .5rem;
-        text-align: center;
-    }
-    nav > ul > li:last-child {
-        border-bottom: none;
-    }
-    nav > ul > li > a {
-        color: var(--text-color);
-        padding: 1rem 2rem;
-    }
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    z-index: 11;
 
-
-    /*Configuración del botón que despliega el nav*/
-    #hamburger-span {
-        background-color: var(--text-color);
-        width: 30px;
-        height: 3px;
-        
-        position: absolute;
-        top: 2rem;
-        left: 47%;
-        z-index: 11;
-
-        cursor: pointer;
-    }
-    #hamburger-span::before {
+    cursor: pointer;
+}
+#hamburger-span::before {
         background-color: var(--text-color);
         content: '';
         width: 30px;
@@ -93,8 +96,8 @@
         position: absolute;
         top: .5rem;
         left: 0;
-    }
-    #hamburger-span::after {
+}
+#hamburger-span::after {
         background-color: var(--text-color);
         content: '';
         width: 30px;
@@ -103,46 +106,57 @@
         position: absolute;
         top: -.5rem;
         left: 0;
-    }
-    #check {
-        display: none;
-    }
-    #check:checked ~ nav {
-        transform: translateY(0);
-    }
+}
+#check {
+    display: none;
+}
+#check:checked ~ nav {
+    transform: translateX(0);
+}
 
 
-    /*Diseño del main*/
-    main {
-        display: flex;
-        justify-content: center;
-        align-items: center;
 
-        height: 80%;
+/*Diseño del main*/
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, .7) 50%, rgba(0, 0, 0, 0))
         
-    }
-    main > div {
-        text-align: center;
-        border-radius: 20px;
-        width: 100%;
-        padding: 1rem;
+}
+main > div {
+    text-align: center;
+    border-radius: 20px;
+    width: 100%;
+    padding: 2rem;
         
-    }
-    #lastname {
-        color: var(--accent-color);
-    }
-    hr {
-        background-color: var(--secondary-color);
-        width: 100%;
-        height: 1px;
-        border: none;
-    }
+}
+#lastname {
+    color: var(--accent-color);
+}
+hr {
+    background-color: var(--secondary-color);
+    width: 100%;
+    height: 1px;
+    border: none;
+}
 
     
 
 
-    .fa {
-        color: var(--accent-color);
-        font-size: 5rem;
-    }
+/*Diseño del footer:*/
+footer {
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+.fa {
+    color: var(--accent-color);
+    font-size: 5rem;
 }
