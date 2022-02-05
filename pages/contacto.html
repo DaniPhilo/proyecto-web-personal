@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Este link importa los iconos de redes sociales -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+    <label for="check" id="hamburger-btn"><span id="hamburger-span"></span></label>
+        <input type="checkbox" name="check" id="check">
+
+    <header>
+        <nav>
+            <ul>
+                <li class="nav-list-item"><a href="../index.html" class="nav-link">Home</a></li>
+                <li class="nav-list-item"><a href="./pages/biografia.html" class="nav-link">Biografía</a></li>
+                <li class="nav-list-item"><a href="./pages/portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-list-item"><a href="./pages/contacto.html" class="nav-link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-contacto">
+            <section>
+            <form action="">
+                <h1>Contacto</h1>
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="lastname">Apellidos:</label>
+                <input type="text" id="lastname" name="lastname" required>
+
+                <label for="email">E-mail:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="comments">Comentarios:</label>
+                <textarea name="comments" id="comments" cols="5" rows="10" required></textarea>
+
+                <div>
+                <input type="checkbox" id="agree" name="agree" required><label for="agree">Acepto que me mandes spam</label>
+            </div>
+                
+
+                <input type="submit">
+            </form>
+        </section>
+    </main>
+    <footer>
+        <a href="#" class="fa fa-instagram" ></a>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-twitter"></a>
+    </footer>
+
+</body>
+
+</html>

@@ -11,6 +11,9 @@
     list-style-type: none;
     text-decoration: none;
 }
+html {
+    height: 100%;
+}
 
 
 
@@ -18,11 +21,12 @@
 body {
     color: var(--text-color);
     background-image: url('../assets/img/teclado.jpg');
-    background-size: 150% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     position: relative;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
 }
 
 
@@ -30,30 +34,31 @@ body {
 
 /* Diseño del nav */
 header {
-    position: relative;
-}
-/* El nav está desplazado hacia arriba siempre, fuera dela pantalla */
-nav {
     background-color: var(--secondary-color);
-
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 0;
     z-index: 9;
     width: 50%;
-    height: 100vh;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     transform: translateX(100%);
     transition: .5s ease-in-out;
+}
+/* El nav está desplazado hacia arriba siempre, fuera dela pantalla */
+nav {
+    width: 100%;
 }
 nav > ul {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
-    margin-top: 8rem;
-
     background-color: var(--secondary-color);
 }
 nav > ul > li {
@@ -68,7 +73,6 @@ nav > ul > li:last-child {
 }
 nav > ul > li > a {
     color: var(--text-color);
-    padding: 1rem .5rem;
 }
 
 
@@ -76,11 +80,11 @@ nav > ul > li > a {
 
 /*Configuración del botón que despliega el nav*/
 #hamburger-span {
-    background-color: var(--text-color);
+    background-color: var(--accent-color);
     width: 30px;
     height: 3px;
         
-    position: absolute;
+    position: fixed;
     top: 2rem;
     right: 2rem;
     z-index: 11;
@@ -88,7 +92,7 @@ nav > ul > li > a {
     cursor: pointer;
 }
 #hamburger-span::before {
-        background-color: var(--text-color);
+        background-color: var(--accent-color);
         content: '';
         width: 30px;
         height: 3px;
@@ -98,7 +102,7 @@ nav > ul > li > a {
         left: 0;
 }
 #hamburger-span::after {
-        background-color: var(--text-color);
+        background-color: var(--accent-color);
         content: '';
         width: 30px;
         height: 3px;
@@ -110,27 +114,28 @@ nav > ul > li > a {
 #check {
     display: none;
 }
-#check:checked ~ nav {
+#check:checked ~ header {
     transform: translateX(0);
 }
 
 
 
 /*Diseño del main*/
-main {
+#main-index {
+    background: linear-gradient(rgba(0, 0, 0, 0) 35%, rgb(0, 0, 0, .7) 50%, rgba(0, 0, 0, 0) 70%, rgb(0, 0, 0, .5));
+
     display: flex;
     justify-content: center;
     align-items: center;
 
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0), rgb(0, 0, 0, .7) 50%, rgba(0, 0, 0, 0))
+    width: 100vw;
+    height: 100%;
         
 }
-main > div {
+#main-index > div {
     text-align: center;
-    border-radius: 20px;
     width: 100%;
-    padding: 2rem;
+    padding: 10vw;
         
 }
 #lastname {
@@ -159,4 +164,39 @@ footer {
 .fa {
     color: var(--accent-color);
     font-size: 5rem;
+}
+
+
+/* CONTACTO.HTML */
+/* Diseño del formulario */
+#main-contacto > section {
+    padding: 4rem 1rem 1rem 1rem;
+}
+form {
+    background-color: hsl(202, 89%, 59%, 0.1);
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 1.5rem;
+}
+form > label,
+form > div {
+    padding: 1rem 0;
+}
+form > input,
+form > textarea {
+    width: 90%;
+}
+form > div > label {
+    padding-left: 1rem;
+}
+form > input[type="submit"] {
+    margin-top: 1rem;
+    padding: .5rem 1rem;
+    width: 5rem;
+    align-self: center;
 }
