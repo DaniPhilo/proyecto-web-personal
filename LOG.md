@@ -6,3 +6,5 @@
 
 05/02/2022 - Solucionados diversos problemas con el tamaño y posición del nav, el main, etc. Ahora mismo funciona, que no es poco.
 Hay que poner el footer como fixed y ponerle un background, o no se va a ver (quizás moverlo a la parte inferior del nav...).
+--
+Termianda la versión para móvil y añadido navbar superior en tablet/laptop. Sólo queda organizar las cosas bien en pantalla grande con flexbox.
