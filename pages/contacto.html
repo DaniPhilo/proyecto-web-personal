@@ -13,21 +13,21 @@
 
 <body>
     <label for="check" id="hamburger-btn"><span id="hamburger-span"></span></label>
-        <input type="checkbox" name="check" id="check">
+    <input type="checkbox" name="check" id="check">
 
     <header>
         <nav>
             <ul>
                 <li class="nav-list-item"><a href="../index.html" class="nav-link">Home</a></li>
-                <li class="nav-list-item"><a href="./pages/biografia.html" class="nav-link">Biografía</a></li>
-                <li class="nav-list-item"><a href="./pages/portfolio.html" class="nav-link">Portfolio</a></li>
+                <li class="nav-list-item"><a href="./biografia.html" class="nav-link">Biografía</a></li>
+                <li class="nav-list-item"><a href="./portfolio.html" class="nav-link">Portfolio</a></li>
                 <li class="nav-list-item"><a href="./pages/contacto.html" class="nav-link">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
     <main id="main-contacto">
-            <section>
+        <section id="contacto-section">
             <form action="">
                 <h1>Contacto</h1>
                 <label for="name">Nombre:</label>
@@ -43,18 +43,21 @@
                 <textarea name="comments" id="comments" cols="5" rows="10" required></textarea>
 
                 <div>
-                <input type="checkbox" id="agree" name="agree" required><label for="agree">Acepto que me mandes spam</label>
-            </div>
-                
+                    <input type="checkbox" id="agree" name="agree" required><label for="agree">Acepto que me mandes
+                        spam</label>
+                </div>
+
 
                 <input type="submit">
             </form>
         </section>
     </main>
     <footer>
-        <a href="#" class="fa fa-instagram" ></a>
-        <a href="#" class="fa fa-facebook"></a>
-        <a href="#" class="fa fa-twitter"></a>
+        <div id="social-icons">
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+        </div>
     </footer>
 
 </body>

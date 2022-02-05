@@ -152,13 +152,16 @@ hr {
 
 
 /*Diseño del footer:*/
-footer {
-    position: absolute;
-    bottom: 1rem;
+#social-icons {
+    background-color: var(--secondary-color);
+    position: fixed;
+    bottom: 0rem;
     left: 0;
     width: 100vw;
+    height: 10%;
 
     display: flex;
+    align-items: center;
     justify-content: space-evenly;
 }
 .fa {
@@ -169,8 +172,12 @@ footer {
 
 /* CONTACTO.HTML */
 /* Diseño del formulario */
-#main-contacto > section {
-    padding: 4rem 1rem 1rem 1rem;
+#main-contacto {
+    height: fit-content;
+}
+#contacto-section {
+    padding: 4rem 1rem 4rem 1rem;
+    height: fit content;
 }
 form {
     background-color: hsl(202, 89%, 59%, 0.1);
@@ -181,7 +188,7 @@ form {
     flex-direction: column;
     justify-content: center;
 
-    padding-left: 1.5rem;
+    padding: 1rem 0 1rem 1.5rem;
 }
 form > label,
 form > div {
@@ -199,4 +206,62 @@ form > input[type="submit"] {
     padding: .5rem 1rem;
     width: 5rem;
     align-self: center;
+}
+
+/* BIOGRAFIA.HTML */
+#biografia-section {
+    margin: 4rem 1rem 4rem 1rem;
+    background-color: hsl(202, 89%, 59%, 0.8);
+    border-radius: 3px;
+    backdrop-filter: blur(3px);
+    padding-bottom: 4rem;
+    height: fit content;
+
+    display: flex;
+    flex-direction: column;
+}
+#biografia-section > h2,
+#biografia-section > article {
+    padding : 1rem 0.5rem 0 0.5rem;
+}
+#biografia-section > article > h3{
+    padding-bottom: 1rem;
+}
+#biografia-section > article > p {
+    padding-bottom: 1rem;
+    text-align: justify;
+}
+#foto-perro-gafas {
+    padding: 1rem .5rem 0 .5rem;
+    width: 200px;
+    height: 250px;
+}
+
+/* PORTFOLIO.HTML */
+#portfolio-section {
+    margin: 4rem 1rem 4rem 1rem;
+    background-color: hsl(202, 89%, 59%, 0.8);
+    border-radius: 3px;
+    backdrop-filter: blur(3px);
+    padding-bottom: 4rem;
+    height: fit content;
+}
+#portfolio-section > h2,
+#portfolio-section > article {
+    padding : 1rem 0.5rem 0 0.5rem;
+}
+#portfolio-section > article > h3{
+    padding-bottom: 1rem;
+}
+#images-container {
+    width: 100%;
+}
+#images-container > figure > img {
+    width: 100%;
+}
+#videos-container {
+    width: 100%;
+}
+#videos-container > iframe{
+    width: 100%;
 }
