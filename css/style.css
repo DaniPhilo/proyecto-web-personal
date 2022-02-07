@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #3E3C44;
+    --primary-color: #292630;
     --secondary-color: #38aff3; /* 158FFF  358fe3 35a3e3*/
     --accent-color: #ff8800; /*FF9900*/
     --text-color: #FFF;
@@ -70,6 +70,12 @@ hr {
     
 
 /*Diseño del footer:*/
+#div-footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    padding: 1rem 2rem 4rem 1rem;
+    text-align: right;
+}
 #social-icons {
     background-color: var(--secondary-color);
     position: fixed;
@@ -116,12 +122,18 @@ form > input[type="submit"] {
 }
 
 /* BIOGRAFIA.HTML */
+#biofgrafia-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 #biografia-section > h2 {
     padding : 1rem 0.5rem 0 0.5rem;
     width: 100%;
 }
 #biografia-section > article {
     padding : 1rem 0.5rem 0 0.5rem;
+    max-width: 300px;
 }
 #biografia-section > article > h3{
     padding-bottom: 1rem;
@@ -130,10 +142,13 @@ form > input[type="submit"] {
     padding-bottom: 1rem;
     text-align: justify;
 }
+#biografia-section > figure {
+    max-width: 250px;
+    margin: 0;
+}
 #foto-perro-gafas {
     padding: 1rem .5rem 0 .5rem;
-    width: 200px;
-    height: 250px;
+    width: 100%;
 }
 
 /* PORTFOLIO.HTML */
@@ -141,7 +156,7 @@ form > input[type="submit"] {
 #portfolio-section > article {
     padding : 1rem 0.5rem 0 0.5rem;
 }
-#portfolio-section > article > h3{
+#portfolio-section > article > h3 {
     padding-bottom: 1rem;
 }
 #images-container {
@@ -153,7 +168,7 @@ form > input[type="submit"] {
 #videos-container {
     width: 100%;
 }
-#videos-container > iframe{
+#videos-container > iframe {
     width: 100%;
 }
 
@@ -245,6 +260,8 @@ form > input[type="submit"] {
 }
 /* Configuración TABLET */
 @media screen and (min-width: 480px) {
+
+    /* Modificación del header para ponerlo encima de la pantalla */
     #hamburger-span {
         display: none;
     }
@@ -261,7 +278,6 @@ form > input[type="submit"] {
         justify-content: center;
         align-items: center;
     }
-    /* El nav sube a menú superior normal */
     nav {
         width: 100%;
     }
@@ -295,8 +311,57 @@ form > input[type="submit"] {
     .nav-list-item:hover .nav-link::after {
         transform: scaleX(1);
     }
+
+    /* Escalo el title de la portada */
+    main > #title > hr {
+        width: 70%;
+    }
+
+    #biografia-section {
+        width: 60%;
+    }
+    #portfolio-section {
+        max-width: 60%;
+    }
+    #images-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-start;
+    }
+    #images-container > figure {
+        width: fit-content;
+    }
+    #images-container > figure > img {
+        max-width: 300px;
+        margin: 0.5rem;
+    }
+    #videos-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #videos-container > iframe {
+        max-width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    /* Escalo el formulario de contacto */
+    #contacto-section {
+        width: 50%;
+    }
+    form > input {
+        width: 80%;
+    }
 }
 /* Configuración LAPTOP */
 @media screen and (min-width: 1024px) {
-
+    /* Escalo el title de la portada */
+    main > #title > hr {
+        width: 50%;
+    }
+    form > input {
+        width: 50%;
+    }
 }
+
