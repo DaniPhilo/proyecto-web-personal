@@ -1,6 +1,6 @@
 :root {
     --primary-color: #292630;
-    --secondary-color: #38aff3; /* 158FFF  358fe3 35a3e3*/
+    --secondary-color: hsl(204, 100%, 50%); /* 158FFF  358fe3 35a3e3*/
     --accent-color: #ff8800; /*FF9900*/
     --text-color: #FFF;
 }
@@ -27,6 +27,8 @@ body {
     position: relative;
     width: 100vw;
     height: 100%;
+
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 
@@ -41,7 +43,7 @@ main {
 }
 main > section {
     margin: 4rem 5%;
-    background-color: hsl(202, 89%, 59%, 0.8);
+    background-color: hsla(204, 100%, 50%, 0.6);
     border-radius: 3px;
     backdrop-filter: blur(3px);
     padding-bottom: 4rem;
@@ -116,24 +118,31 @@ form > div > label {
 }
 form > input[type="submit"] {
     margin-top: 1rem;
-    padding: .5rem 1rem;
-    width: 5rem;
+    padding: 1rem 2rem;
+    width: fit-content;
     align-self: center;
+
+    border: 1px solid var(--accent-color);
+    border-radius: 30px;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    transition: 0.25s ease-in-out;
+    cursor: pointer;
+}
+form > input[type="submit"]:hover {
+    background-color: var(--text-color);
 }
 
 /* BIOGRAFIA.HTML */
 #biofgrafia-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: flex; 
 }
 #biografia-section > h2 {
     padding : 1rem 0.5rem 0 0.5rem;
-    width: 100%;
+    width: 60vw;
 }
 #biografia-section > article {
     padding : 1rem 0.5rem 0 0.5rem;
-    max-width: 300px;
 }
 #biografia-section > article > h3{
     padding-bottom: 1rem;
@@ -143,12 +152,12 @@ form > input[type="submit"] {
     text-align: justify;
 }
 #biografia-section > figure {
-    max-width: 250px;
-    margin: 0;
+    display: flex;
+    justify-content: center;
 }
 #foto-perro-gafas {
     padding: 1rem .5rem 0 .5rem;
-    width: 100%;
+    width: 250px;
 }
 
 /* PORTFOLIO.HTML */
@@ -219,20 +228,19 @@ form > input[type="submit"] {
     
     
     /*Configuración del botón que despliega el nav*/
+    
     #hamburger-span {
-        background-color: var(--accent-color);
+        background-color: var(--text-color);
         width: 30px;
         height: 3px;
-            
         position: fixed;
         top: 2rem;
         right: 2rem;
         z-index: 11;
-    
         cursor: pointer;
     }
     #hamburger-span::before {
-            background-color: var(--accent-color);
+            background-color: var(--text-color);
             content: '';
             width: 30px;
             height: 3px;
@@ -242,7 +250,7 @@ form > input[type="submit"] {
             left: 0;
     }
     #hamburger-span::after {
-            background-color: var(--accent-color);
+            background-color: var(--text-color);
             content: '';
             width: 30px;
             height: 3px;
@@ -315,11 +323,16 @@ form > input[type="submit"] {
     /* Escalo el title de la portada */
     main > #title > hr {
         width: 70%;
+        margin: 0.5% 0;
     }
 
     #biografia-section {
-        width: 60%;
+        width: 70%;
     }
+    #biografia-section > figure {
+        float: left;
+    }
+
     #portfolio-section {
         max-width: 60%;
     }
